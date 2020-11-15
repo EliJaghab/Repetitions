@@ -1,16 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14256" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="17506" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14243"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14219"/>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="17500"/>
     </dependencies>
     <scenes>
         <!--Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModuleProvider="target"/>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Repetitions_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <label alignment="center" text="Routine" textAlignment="center" id="xVS-SD-pva">
+                            <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                        </label>
+                        <table alignment="left" id="0SM-pa-UNR">
+                            <items>
+                                <tableRow identifier="RowController" id="Dw1-RQ-a3f" customClass="RowController" customModule="Repetitions_WatchKit_Extension">
+                                    <group key="rootItem" width="1" alignment="left" id="WKm-dh-Pmd">
+                                        <items>
+                                            <label width="136" height="218" alignment="center" text="Label" textAlignment="center" id="oEf-jM-dS6"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="rowLabel" destination="oEf-jM-dS6" id="d7e-eV-ZNs"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                        <button width="1" alignment="left" title="Send to iPhone" id="FFL-wi-Sb8">
+                            <connections>
+                                <action selector="tapSendToIphone" destination="AgC-eL-Hgc" id="bqo-4G-nL0"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="label" destination="xVS-SD-pva" id="URS-N0-L6H"/>
+                        <outlet property="tableView" destination="0SM-pa-UNR" id="RhO-MD-LMa"/>
+                    </connections>
+                </controller>
             </objects>
             <point key="canvasLocation" x="220" y="345"/>
+        </scene>
+        <!--DetailInterfaceController-->
+        <scene sceneID="lOD-nn-DI8">
+            <objects>
+                <controller identifier="DetailInterfaceController" id="gfh-72-5ux" customClass="DetailinterfaceController" customModule="Repetitions_WatchKit_Extension">
+                    <items>
+                        <label alignment="center" text="Label" id="s2X-0O-2aF">
+                            <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                        </label>
+                        <timer alignment="left" id="jWu-tj-ZFi"/>
+                    </items>
+                    <connections>
+                        <outlet property="exerciseLabel" destination="s2X-0O-2aF" id="w0C-qo-Fkm"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="468" y="345"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">
@@ -32,16 +80,16 @@
         <!--Notification Controller-->
         <scene sceneID="ZPc-GJ-vnh">
             <objects>
-                <controller id="4sK-HA-Art" customClass="NotificationController" customModuleProvider="target"/>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="Repetitions_WatchKit_App" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="468" y="643"/>
         </scene>
         <!--Notification Controller-->
         <scene sceneID="Niz-AI-uX2">
             <objects>
-                <controller id="eXb-UN-Cd0" customClass="NotificationController" customModuleProvider="target"/>
+                <controller id="eXb-UN-Cd0" customClass="NotificationController" customModule="Repetitions_WatchKit_App" customModuleProvider="target"/>
             </objects>
-            <point key="canvasLocation" x="468" y="345"/>
+            <point key="canvasLocation" x="715" y="643"/>
         </scene>
     </scenes>
 </document>
