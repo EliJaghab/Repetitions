@@ -21,11 +21,11 @@ class ViewController: UIViewController, UITextFieldDelegate, WCSessionDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         routineField.delegate = self
-        self.configureWatchKitSession()
+        createWCSession()
         // Do any additional setup after loading the view.
     }
     
-    func configureWatchKitSession() {
+    func createWCSession() {
       
       if WCSession.isSupported() {
         session = WCSession.default
@@ -42,21 +42,36 @@ class ViewController: UIViewController, UITextFieldDelegate, WCSessionDelegate {
         }
 
 
+
     @IBAction func enterTapped(_ sender: Any) {
-        var items = ["Routine Placeholder", "Ex 1", "Ex 2", "Ex 3", "Ex 4", "Ex 5"]
+        var items = [String]()
         items = routineField.text!.components(separatedBy: ",")
+        let exercises = Array(items.dropFirst(1))
         
-        let routine = items[0]
+        let currRoutine = Routine(routineLabel: items[0], exerciseArray: exercises)
+      /*  let routine = items[0]
         let ex1 = items[1]
         let ex2 = items[2]
         let ex3 = items[3]
         let ex4 = items[4]
-        let ex5 = items[5]
-        textView.text = "Routine: \(routine)\nExercise 1:\(ex1)\nExercise 2:\(ex2)\nExercise 3:\(ex3)\nExercise 4:\(ex4)\nExercise 5:\(ex5)"
+        let ex5 = items[5] */
+        textView.text = currRoutine.formatRoutine()
         
-        if let validSession = self.session, validSession.isReachable {//5.1
-            let data: [String: Any] = ["iPhone": (items) as Any] // Create your Dictionay as per uses
-            validSession.sendMessage(data, replyHandler: nil, errorHandler: nil)
+        let routineDict = currRoutine.toDictionary()
+        
+        if let validSession = self.session, validSession.isReachable {
+            validSession.sendMessage(routineDict, replyHandler: nil, errorHandler: nil)
+        
+        
+        
+        //if let validSession = self.session, validSession.isReachable {//5.1
+            //let data: [String: Any] = ["iPhone": (currRoutine) as Any] // Create your Dictionay as per uses
+            //print("test")
+            //validSession.sendMessage(routineDict, replyHandler: nil, errorHandler: nil)
+            //validSession.sendMessageData(data: Routine, replyHandler: nil, errorHandler: nil)
+            
+            /*validSession.sendMessage(["routineLabel": currRoutine.routineLabel, "ex1Label": currRoutine.exercise1, "ex2Label": currRoutine.exercise2, "ex3Label": currRoutine.exercise3, "ex4Label": currRoutine.exercise4, "ex5Label": currRoutine.exercise5], replyHandler: nil, errorHandler: nil)
+ */
           }
     }
     

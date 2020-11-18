@@ -36,7 +36,7 @@
                         </button>
                     </items>
                     <connections>
-                        <outlet property="label" destination="xVS-SD-pva" id="URS-N0-L6H"/>
+                        <outlet property="label" destination="xVS-SD-pva" id="q9b-d7-Zvw"/>
                         <outlet property="tableView" destination="0SM-pa-UNR" id="RhO-MD-LMa"/>
                     </connections>
                 </controller>
