@@ -25,7 +25,6 @@
 		45783BC9254912D3003A38C8 /* ExerciseInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45783BC8254912D3003A38C8 /* ExerciseInterfaceController.swift */; };
 		45783BD0254C5389003A38C8 /* ExerciseRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45783BCF254C5389003A38C8 /* ExerciseRowController.swift */; };
 		45DC51B42560B97F00C97BD5 /* DetailInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DC51B32560B97F00C97BD5 /* DetailInterfaceController.swift */; };
-		45DC51B92560D2C800C97BD5 /* Routine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DC51B82560D2C800C97BD5 /* Routine.swift */; };
 		45DC51C92561EBC600C97BD5 /* Routine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DC51C82561EBC600C97BD5 /* Routine.swift */; };
 		45DC51D12562BEAF00C97BD5 /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DC51D02562BEAF00C97BD5 /* Main.swift */; };
 /* End PBXBuildFile section */
@@ -96,7 +95,6 @@
 		45783BC8254912D3003A38C8 /* ExerciseInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseInterfaceController.swift; sourceTree = "<group>"; };
 		45783BCF254C5389003A38C8 /* ExerciseRowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseRowController.swift; sourceTree = "<group>"; };
 		45DC51B32560B97F00C97BD5 /* DetailInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInterfaceController.swift; sourceTree = "<group>"; };
-		45DC51B82560D2C800C97BD5 /* Routine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routine.swift; sourceTree = "<group>"; };
 		45DC51C82561EBC600C97BD5 /* Routine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routine.swift; sourceTree = "<group>"; };
 		45DC51D02562BEAF00C97BD5 /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -178,7 +176,6 @@
 				45DC51B32560B97F00C97BD5 /* DetailInterfaceController.swift */,
 				45783BC8254912D3003A38C8 /* ExerciseInterfaceController.swift */,
 				45783BCF254C5389003A38C8 /* ExerciseRowController.swift */,
-				45DC51B82560D2C800C97BD5 /* Routine.swift */,
 			);
 			path = "Repetitions WatchKit Extension";
 			sourceTree = "<group>";
@@ -329,7 +326,6 @@
 			files = (
 				45783BB0254517AA003A38C8 /* NotificationController.swift in Sources */,
 				45783BAE254517AA003A38C8 /* ExtensionDelegate.swift in Sources */,
-				45DC51B92560D2C800C97BD5 /* Routine.swift in Sources */,
 				45783BC325451A13003A38C8 /* RowController.swift in Sources */,
 				45783BAC254517AA003A38C8 /* InterfaceController.swift in Sources */,
 				45783BD0254C5389003A38C8 /* ExerciseRowController.swift in Sources */,

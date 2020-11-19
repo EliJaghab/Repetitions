@@ -12,6 +12,7 @@ struct Routine {
     var routineLabel: String
     var exercises: [String]
     
+    // Format Routine so User can Confirm Input
     func formatRoutine () -> String {
         var exercisesFormatted = ""
         for (var index, exercise) in exercises.enumerated() {
@@ -20,14 +21,14 @@ struct Routine {
         }
 
         return "Routine: \(routineLabel)\nExercises:\(exercisesFormatted)"
-        //return "Routine: \(routineLabel)\nExercises:\(exercises))"
+
     }
     
     init(routineLabel: String, exerciseArray: [String]) {
             self.routineLabel = routineLabel
             self.exercises = exerciseArray
     }
-
+    // Convert Struct to Dictionary
     func toDictionary() -> [String:[String]] {
         let dict = [self.routineLabel: exercises]
         

@@ -32,12 +32,13 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Enter your workout here" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="T67-co-7Og">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="T67-co-7Og">
                                 <rect key="frame" x="20" y="146" width="374" height="299"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="299" id="tm1-su-xrA"/>
                                 </constraints>
+                                <string key="text">Enter your workout here. First type the name of the Routine and then the exercises separated by commas.                                                             ex. Upper Body, Bench Press, Chest Flies, Rows, Shoulder Press</string>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -51,21 +52,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bX4-ck-7KT">
-                                <rect key="frame" x="20" y="438" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kOj-ld-0CL">
-                                <rect key="frame" x="348" y="438" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="tapSendDataToWatch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SW2-86-3C3"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Uee-0j-aNJ"/>
                         <color key="backgroundColor" systemColor="systemGray6Color"/>
@@ -86,7 +72,6 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="label" destination="bX4-ck-7KT" id="7El-FC-jBJ"/>
                         <outlet property="routineField" destination="T67-co-7Og" id="HGt-ib-lrF"/>
                         <outlet property="textView" destination="R9p-mC-AKD" id="2s7-De-oW7"/>
                     </connections>

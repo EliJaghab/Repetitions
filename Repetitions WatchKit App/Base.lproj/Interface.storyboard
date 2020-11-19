@@ -44,21 +44,21 @@
             <point key="canvasLocation" x="220" y="345"/>
         </scene>
         <!--DetailInterfaceController-->
-        <scene sceneID="lOD-nn-DI8">
+        <scene sceneID="fXe-7a-SdZ">
             <objects>
-                <controller identifier="DetailInterfaceController" id="gfh-72-5ux" customClass="DetailinterfaceController" customModule="Repetitions_WatchKit_Extension">
+                <controller identifier="DetailInterfaceController" id="dXZ-E4-sZt" customClass="DetailInterfaceController" customModule="Repetitions_WatchKit_Extension">
                     <items>
-                        <label alignment="center" text="Label" id="s2X-0O-2aF">
+                        <label alignment="center" text="Label" id="oNL-bS-r7n">
                             <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
                         </label>
-                        <timer alignment="left" id="jWu-tj-ZFi"/>
+                        <button width="1" alignment="left" title="Button" id="wBh-uD-sKc"/>
                     </items>
                     <connections>
-                        <outlet property="exerciseLabel" destination="s2X-0O-2aF" id="w0C-qo-Fkm"/>
+                        <outlet property="exerciseLabel" destination="oNL-bS-r7n" id="72j-FN-Zem"/>
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="468" y="345"/>
+            <point key="canvasLocation" x="467" y="343"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">

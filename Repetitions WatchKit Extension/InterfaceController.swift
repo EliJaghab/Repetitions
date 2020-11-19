@@ -10,9 +10,7 @@ import WatchKit
 import Foundation
 import WatchConnectivity
 
-
-
-class InterfaceController: WKInterfaceController {
+class InterfaceController: WKInterfaceController, WCSessionDelegate {
 
     @IBOutlet weak var label: WKInterfaceLabel!
     @IBOutlet weak var tableView: WKInterfaceTable!
@@ -22,13 +20,7 @@ class InterfaceController: WKInterfaceController {
         super.awake(withContext: context)
         session.delegate = self
         session.activate()
-        
-        // Configure interface objects here.
-    }
-    
-    @IBAction func tapSendToIphone() {
-        let data: [String: Any] = ["watch": "data from watch" as Any] //Create your dictionary as per uses
-        session.sendMessage(data, replyHandler: nil, errorHandler: nil) //**6.1
+
     }
     
     
@@ -43,33 +35,27 @@ class InterfaceController: WKInterfaceController {
     }
     
     override func contextForSegue(withIdentifier segueIdentifier: String, in table: WKInterfaceTable, rowIndex: Int) -> Any? {
-        return "test!!!"
+        return "test"
     }
     
 
-
-
-    
-    //override func table(_ table: WKInterfaceTable, didSelectRowAt rowIndex: Int) {
-    // pushController(withName: DetailInterfaceController, context: routines[rowIndex])
-
-        //pushController(withName: "DetailInterfaceController", context: routines[rowIndex])
-    //}
-
-}
-
-extension InterfaceController: WCSessionDelegate {
-    
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
 
     }
     
+    var routineExercises = [String]()
     func session(_ session: WCSession, didReceiveMessage message: [String: Any]) {
+        // Assign Routine Name to Label
         if let value = message[Array(message)[0].key] as? [String] {
             self.label.setText(Array(message)[0].key)
             
-            let routineExercises = Array(value.dropFirst(0))
+            // Remove Routine Name from Exercsies
+            routineExercises = Array(value.dropFirst(0))
+            
+            // Count Exercsies for Table Number
             tableView.setNumberOfRows(routineExercises.count, withRowType: "RowController")
+            
+            // Populate Table wit Exercsies
             for (index, routine) in routineExercises.enumerated() {
                 if let rowController = tableView.rowController(at: index) as? RowController {
                     rowController.rowLabel.setText(routine)
@@ -77,7 +63,13 @@ extension InterfaceController: WCSessionDelegate {
             }
         }
     }
-            
+    
+    // Send Data to DetailInterfaceController for Next Screen
+    override func table(_ table: WKInterfaceTable, didSelectRowAt rowIndex: Int) {
+        pushController(withName: "DetailInterfaceController", context: routineExercises[rowIndex])
+
     }
+}
+            
     
 
